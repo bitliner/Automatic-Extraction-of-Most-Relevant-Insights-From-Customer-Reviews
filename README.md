@@ -1,4 +1,4 @@
-# Automatic Extraction of Insights from Customer Reviews
+# Automatic Extraction of Most Relevant Insights from Customer Reviews
 
 ## Introduction
 
