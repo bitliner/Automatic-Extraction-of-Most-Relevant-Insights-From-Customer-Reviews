@@ -1,5 +1,13 @@
 # Automatic Extraction of Most Relevant Insights from Customer Reviews
 
+## Index
+
+1. [Introduction](introduction)
+2. [Algorithm](algorithm)
+3. [Implementation details](implementation-details)
+4. [Experiments](#experiments)
+5. [Release cycle](release-cycle)
+
 ## Introduction
 
 In the last 5 years more than 5 billion of reviews shoppers wrote on the Web. 
