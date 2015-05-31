@@ -2,11 +2,11 @@
 
 ## Index
 
-1. [Introduction](introduction)
-2. [Algorithm](algorithm)
-3. [Implementation details](implementation-details)
+1. [Introduction](#introduction)
+2. [Algorithm](#algorithm)
+3. [Implementation details](#implementation-details)
 4. [Experiments](#experiments)
-5. [Release cycle](release-cycle)
+5. [Release cycle](#release-cycle)
 
 ## Introduction
 
