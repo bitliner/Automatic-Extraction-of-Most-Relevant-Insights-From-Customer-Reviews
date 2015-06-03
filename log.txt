@@ -2,3 +2,300 @@ The input consisted of 200 lines.
 The time to create the doc2vec model was 0.184730052948 
 The time to estimate the bandwidth was 0.0109629631042 
 The time to create the clustering was 0.226160049438 
+2015-06-03 16:02:11,141 : INFO : collecting all words and their counts
+2015-06-03 16:02:11,145 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:02:11,147 : INFO : collected 56 word types from a corpus of 72 words and 36 items
+2015-06-03 16:02:11,147 : INFO : total 56 word types after removing those with count<1
+2015-06-03 16:02:11,147 : INFO : constructing a huffman tree from 56 words
+2015-06-03 16:02:11,150 : INFO : built huffman tree with maximum node depth 7
+2015-06-03 16:02:11,151 : INFO : constructing a table with noise distribution from 56 words
+2015-06-03 16:03:14,432 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 16:03:14,434 : INFO : resetting layer weights
+2015-06-03 16:03:14,439 : INFO : training model with 3 workers on 56 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 16:03:14,444 : INFO : reached the end of input; waiting to finish 1 outstanding jobs
+2015-06-03 16:03:14,453 : INFO : training on 41 words took 0.0s, 3083 words/s
+2015-06-03 16:03:14,454 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 16:03:14,454 : INFO : not storing attribute syn0norm
+2015-06-03 16:03:14,454 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 16:05:04,746 : INFO : collecting all words and their counts
+2015-06-03 16:05:04,750 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:05:04,753 : INFO : collected 56 word types from a corpus of 72 words and 36 items
+2015-06-03 16:05:04,753 : INFO : total 56 word types after removing those with count<1
+2015-06-03 16:05:04,753 : INFO : constructing a huffman tree from 56 words
+2015-06-03 16:05:04,757 : INFO : built huffman tree with maximum node depth 7
+2015-06-03 16:05:04,757 : INFO : constructing a table with noise distribution from 56 words
+2015-06-03 16:06:01,364 : INFO : collecting all words and their counts
+2015-06-03 16:06:01,365 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:06:24,668 : INFO : PROGRESS: at item #10000, processed 1704646 words and 118275 word types
+2015-06-03 16:06:45,716 : INFO : PROGRESS: at item #20000, processed 3371302 words and 192553 word types
+2015-06-03 16:07:05,408 : INFO : PROGRESS: at item #30000, processed 4935921 words and 256229 word types
+2015-06-03 16:07:25,792 : INFO : PROGRESS: at item #40000, processed 6463922 words and 314143 word types
+2015-06-03 16:07:46,123 : INFO : PROGRESS: at item #50000, processed 7991754 words and 369647 word types
+2015-06-03 16:08:07,954 : INFO : PROGRESS: at item #60000, processed 9549329 words and 422905 word types
+2015-06-03 16:08:31,407 : INFO : PROGRESS: at item #70000, processed 11112736 words and 474525 word types
+2015-06-03 16:08:54,206 : INFO : PROGRESS: at item #80000, processed 12704071 words and 525674 word types
+2015-06-03 16:09:21,666 : INFO : PROGRESS: at item #90000, processed 14237425 words and 572521 word types
+2015-06-03 16:09:44,467 : INFO : PROGRESS: at item #100000, processed 15708057 words and 618301 word types
+2015-06-03 16:10:09,732 : INFO : PROGRESS: at item #110000, processed 17163040 words and 662362 word types
+2015-06-03 16:10:36,079 : INFO : PROGRESS: at item #120000, processed 18598148 words and 705657 word types
+2015-06-03 16:11:10,408 : INFO : PROGRESS: at item #130000, processed 19984761 words and 745689 word types
+2015-06-03 16:11:46,978 : INFO : PROGRESS: at item #140000, processed 21427915 words and 787982 word types
+2015-06-03 16:12:03,744 : INFO : PROGRESS: at item #150000, processed 22882414 words and 828995 word types
+2015-06-03 16:12:17,487 : INFO : PROGRESS: at item #160000, processed 24328340 words and 868574 word types
+2015-06-03 16:13:17,141 : INFO : collecting all words and their counts
+2015-06-03 16:13:17,143 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:13:17,460 : INFO : collected 21212 word types from a corpus of 150222 words and 1000 items
+2015-06-03 16:13:17,494 : INFO : total 21212 word types after removing those with count<1
+2015-06-03 16:13:17,494 : INFO : constructing a huffman tree from 21212 words
+2015-06-03 16:13:19,257 : INFO : built huffman tree with maximum node depth 19
+2015-06-03 16:13:19,272 : INFO : constructing a table with noise distribution from 21212 words
+2015-06-03 16:14:36,248 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 16:14:36,380 : INFO : resetting layer weights
+2015-06-03 16:14:37,339 : INFO : training model with 3 workers on 21212 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 16:14:39,616 : INFO : PROGRESS: at 4.14% words, alpha 0.02500, 4831 words/s
+2015-06-03 16:14:39,616 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 16:14:41,108 : INFO : PROGRESS: at 28.98% words, alpha 0.02280, 20440 words/s
+2015-06-03 16:14:41,660 : INFO : training on 127203 words took 4.3s, 29441 words/s
+2015-06-03 16:14:41,661 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 16:14:41,662 : INFO : not storing attribute syn0norm
+2015-06-03 16:14:41,662 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 16:41:22,881 : INFO : collecting all words and their counts
+2015-06-03 16:41:22,895 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:41:23,196 : INFO : collected 21212 word types from a corpus of 150222 words and 1000 items
+2015-06-03 16:41:23,232 : INFO : total 21212 word types after removing those with count<1
+2015-06-03 16:41:23,232 : INFO : constructing a huffman tree from 21212 words
+2015-06-03 16:41:24,943 : INFO : built huffman tree with maximum node depth 19
+2015-06-03 16:41:24,955 : INFO : constructing a table with noise distribution from 21212 words
+2015-06-03 16:42:32,970 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 16:42:33,079 : INFO : resetting layer weights
+2015-06-03 16:42:33,951 : INFO : training model with 3 workers on 21212 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 16:42:36,373 : INFO : PROGRESS: at 4.14% words, alpha 0.02500, 4542 words/s
+2015-06-03 16:42:36,374 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 16:42:37,772 : INFO : PROGRESS: at 28.94% words, alpha 0.02280, 20140 words/s
+2015-06-03 16:42:38,333 : INFO : training on 127037 words took 4.4s, 28998 words/s
+2015-06-03 16:42:38,334 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 16:42:38,334 : INFO : not storing attribute syn0norm
+2015-06-03 16:42:38,334 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 16:50:03,293 : INFO : collecting all words and their counts
+2015-06-03 16:50:03,294 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:50:05,918 : INFO : PROGRESS: at item #10000, processed 1711448 words and 103577 word types
+2015-06-03 16:50:08,661 : INFO : PROGRESS: at item #20000, processed 3332297 words and 178556 word types
+2015-06-03 16:50:21,980 : INFO : collecting all words and their counts
+2015-06-03 16:50:21,981 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 16:50:24,826 : INFO : PROGRESS: at item #10000, processed 1711448 words and 103577 word types
+2015-06-03 16:50:28,161 : INFO : PROGRESS: at item #20000, processed 3332297 words and 178556 word types
+2015-06-03 16:50:31,387 : INFO : PROGRESS: at item #30000, processed 4948495 words and 245121 word types
+2015-06-03 16:50:33,978 : INFO : PROGRESS: at item #40000, processed 6481109 words and 303414 word types
+2015-06-03 16:50:36,714 : INFO : PROGRESS: at item #50000, processed 7996398 words and 358407 word types
+2015-06-03 16:50:39,118 : INFO : PROGRESS: at item #60000, processed 9559929 words and 412904 word types
+2015-06-03 16:50:41,739 : INFO : PROGRESS: at item #70000, processed 11097575 words and 463164 word types
+2015-06-03 16:50:44,057 : INFO : PROGRESS: at item #80000, processed 12673514 words and 513578 word types
+2015-06-03 16:50:46,917 : INFO : PROGRESS: at item #90000, processed 14237102 words and 562162 word types
+2015-06-03 16:50:49,694 : INFO : PROGRESS: at item #100000, processed 15749684 words and 608536 word types
+2015-06-03 16:50:51,924 : INFO : PROGRESS: at item #110000, processed 17186939 words and 652253 word types
+2015-06-03 16:50:54,156 : INFO : PROGRESS: at item #120000, processed 18636533 words and 695530 word types
+2015-06-03 16:50:57,083 : INFO : PROGRESS: at item #130000, processed 20051527 words and 736277 word types
+2015-06-03 16:50:59,958 : INFO : PROGRESS: at item #140000, processed 21494579 words and 778748 word types
+2015-06-03 16:51:02,285 : INFO : PROGRESS: at item #150000, processed 22897917 words and 818543 word types
+2015-06-03 16:51:04,663 : INFO : PROGRESS: at item #160000, processed 24362680 words and 858439 word types
+2015-06-03 16:51:07,479 : INFO : PROGRESS: at item #170000, processed 25796072 words and 898631 word types
+2015-06-03 16:51:09,754 : INFO : PROGRESS: at item #180000, processed 27179455 words and 936631 word types
+2015-06-03 16:51:12,568 : INFO : PROGRESS: at item #190000, processed 28601834 words and 975893 word types
+2015-06-03 16:51:14,601 : INFO : PROGRESS: at item #200000, processed 29919260 words and 1011163 word types
+2015-06-03 16:51:16,821 : INFO : PROGRESS: at item #210000, processed 31277287 words and 1048259 word types
+2015-06-03 16:51:19,013 : INFO : PROGRESS: at item #220000, processed 32615457 words and 1084051 word types
+2015-06-03 16:51:22,150 : INFO : PROGRESS: at item #230000, processed 33963229 words and 1120848 word types
+2015-06-03 16:51:24,868 : INFO : PROGRESS: at item #240000, processed 35305997 words and 1156666 word types
+2015-06-03 16:51:27,144 : INFO : PROGRESS: at item #250000, processed 36585373 words and 1189883 word types
+2015-06-03 16:51:29,289 : INFO : PROGRESS: at item #260000, processed 37905995 words and 1224528 word types
+2015-06-03 16:51:31,466 : INFO : PROGRESS: at item #270000, processed 39194310 words and 1258852 word types
+2015-06-03 16:51:34,379 : INFO : PROGRESS: at item #280000, processed 40507589 words and 1292581 word types
+2015-06-03 16:51:37,535 : INFO : PROGRESS: at item #290000, processed 41842362 words and 1327068 word types
+2015-06-03 16:51:39,834 : INFO : PROGRESS: at item #300000, processed 43122970 words and 1360014 word types
+2015-06-03 16:51:42,461 : INFO : PROGRESS: at item #310000, processed 44411076 words and 1392503 word types
+2015-06-03 16:51:47,628 : INFO : PROGRESS: at item #320000, processed 45612036 words and 1422828 word types
+2015-06-03 16:51:49,872 : INFO : PROGRESS: at item #330000, processed 46867265 words and 1454750 word types
+2015-06-03 16:51:51,809 : INFO : PROGRESS: at item #340000, processed 48037813 words and 1484452 word types
+2015-06-03 16:51:54,437 : INFO : PROGRESS: at item #350000, processed 49204972 words and 1513943 word types
+2015-06-03 16:51:56,697 : INFO : PROGRESS: at item #360000, processed 50448711 words and 1544712 word types
+2015-06-03 16:51:58,999 : INFO : PROGRESS: at item #370000, processed 51620781 words and 1574229 word types
+2015-06-03 16:52:01,112 : INFO : PROGRESS: at item #380000, processed 52794650 words and 1603478 word types
+2015-06-03 16:52:03,059 : INFO : PROGRESS: at item #390000, processed 53920499 words and 1631410 word types
+2015-06-03 16:52:04,905 : INFO : PROGRESS: at item #400000, processed 55030132 words and 1658932 word types
+2015-06-03 16:52:06,914 : INFO : PROGRESS: at item #410000, processed 56145372 words and 1686504 word types
+2015-06-03 16:52:08,681 : INFO : PROGRESS: at item #420000, processed 57199651 words and 1713150 word types
+2015-06-03 16:52:10,626 : INFO : PROGRESS: at item #430000, processed 58311423 words and 1740253 word types
+2015-06-03 16:52:15,154 : INFO : PROGRESS: at item #440000, processed 59297764 words and 1765323 word types
+2015-06-03 16:52:17,079 : INFO : PROGRESS: at item #450000, processed 60255374 words and 1789984 word types
+2015-06-03 16:52:18,702 : INFO : collected 1806777 word types from a corpus of 60923250 words and 457464 items
+2015-06-03 16:52:25,460 : INFO : total 1806777 word types after removing those with count<1
+2015-06-03 16:52:25,462 : INFO : constructing a huffman tree from 1806777 words
+2015-06-03 16:56:21,235 : INFO : built huffman tree with maximum node depth 27
+2015-06-03 16:56:23,340 : INFO : constructing a table with noise distribution from 1806777 words
+2015-06-03 17:00:59,502 : INFO : collecting all words and their counts
+2015-06-03 17:00:59,503 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:01:00,056 : INFO : collected 35956 word types from a corpus of 322818 words and 2000 items
+2015-06-03 17:01:00,112 : INFO : total 35956 word types after removing those with count<1
+2015-06-03 17:01:00,112 : INFO : constructing a huffman tree from 35956 words
+2015-06-03 17:01:03,685 : INFO : built huffman tree with maximum node depth 20
+2015-06-03 17:01:03,716 : INFO : constructing a table with noise distribution from 35956 words
+2015-06-03 17:02:15,773 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:02:15,954 : INFO : resetting layer weights
+2015-06-03 17:02:17,332 : INFO : training model with 3 workers on 35956 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:02:18,652 : INFO : PROGRESS: at 7.74% words, alpha 0.02344, 34486 words/s
+2015-06-03 17:02:19,709 : INFO : PROGRESS: at 19.43% words, alpha 0.02173, 48076 words/s
+2015-06-03 17:02:20,294 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:02:20,982 : INFO : PROGRESS: at 31.94% words, alpha 0.01816, 51469 words/s
+2015-06-03 17:02:21,861 : INFO : training on 272794 words took 4.5s, 60237 words/s
+2015-06-03 17:02:21,862 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:02:21,863 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:02:22,226 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:02:26,495 : INFO : not storing attribute syn0norm
+2015-06-03 17:02:26,495 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:02:27,065 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy
+2015-06-03 17:04:01,420 : INFO : collecting all words and their counts
+2015-06-03 17:04:01,422 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:04:02,476 : INFO : collected 50226 word types from a corpus of 512574 words and 3000 items
+2015-06-03 17:04:02,550 : INFO : total 50226 word types after removing those with count<1
+2015-06-03 17:04:02,550 : INFO : constructing a huffman tree from 50226 words
+2015-06-03 17:04:06,966 : INFO : built huffman tree with maximum node depth 20
+2015-06-03 17:04:07,001 : INFO : constructing a table with noise distribution from 50226 words
+2015-06-03 17:05:16,962 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:05:17,232 : INFO : resetting layer weights
+2015-06-03 17:05:19,476 : INFO : training model with 3 workers on 50226 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:05:20,482 : INFO : PROGRESS: at 3.92% words, alpha 0.02500, 36563 words/s
+2015-06-03 17:05:21,656 : INFO : PROGRESS: at 10.49% words, alpha 0.02295, 45143 words/s
+2015-06-03 17:05:22,732 : INFO : PROGRESS: at 18.87% words, alpha 0.02161, 54358 words/s
+2015-06-03 17:05:24,070 : INFO : PROGRESS: at 25.56% words, alpha 0.01928, 52166 words/s
+2015-06-03 17:05:25,496 : INFO : PROGRESS: at 30.66% words, alpha 0.01772, 47758 words/s
+2015-06-03 17:05:25,497 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:05:26,619 : INFO : PROGRESS: at 39.36% words, alpha 0.01597, 51662 words/s
+2015-06-03 17:05:27,586 : INFO : training on 433974 words took 8.1s, 53513 words/s
+2015-06-03 17:05:27,586 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:05:27,587 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:05:28,488 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:05:35,343 : INFO : not storing attribute syn0norm
+2015-06-03 17:05:35,380 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:05:36,271 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy
+2015-06-03 17:05:56,089 : INFO : collecting all words and their counts
+2015-06-03 17:05:56,092 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:05:57,511 : INFO : collected 61911 word types from a corpus of 695198 words and 4000 items
+2015-06-03 17:05:57,647 : INFO : total 61911 word types after removing those with count<1
+2015-06-03 17:05:57,647 : INFO : constructing a huffman tree from 61911 words
+2015-06-03 17:06:03,588 : INFO : built huffman tree with maximum node depth 21
+2015-06-03 17:06:03,629 : INFO : constructing a table with noise distribution from 61911 words
+2015-06-03 17:07:24,231 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:07:24,565 : INFO : resetting layer weights
+2015-06-03 17:07:28,166 : INFO : training model with 3 workers on 61911 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:07:29,181 : INFO : PROGRESS: at 0.86% words, alpha 0.02500, 10806 words/s
+2015-06-03 17:07:30,430 : INFO : PROGRESS: at 6.04% words, alpha 0.02454, 33998 words/s
+2015-06-03 17:07:31,774 : INFO : PROGRESS: at 10.96% words, alpha 0.02276, 38723 words/s
+2015-06-03 17:07:32,930 : INFO : PROGRESS: at 16.00% words, alpha 0.02184, 42824 words/s
+2015-06-03 17:07:33,972 : INFO : PROGRESS: at 19.64% words, alpha 0.02056, 43113 words/s
+2015-06-03 17:07:35,063 : INFO : PROGRESS: at 24.47% words, alpha 0.02030, 45240 words/s
+2015-06-03 17:07:36,231 : INFO : PROGRESS: at 31.22% words, alpha 0.01777, 49352 words/s
+2015-06-03 17:07:36,806 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:07:37,332 : INFO : PROGRESS: at 38.53% words, alpha 0.01719, 53593 words/s
+2015-06-03 17:07:38,446 : INFO : PROGRESS: at 44.26% words, alpha 0.01472, 54883 words/s
+2015-06-03 17:07:38,540 : INFO : training on 588547 words took 10.4s, 56736 words/s
+2015-06-03 17:07:38,540 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:07:38,541 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:07:39,644 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:07:46,320 : INFO : not storing attribute syn0norm
+2015-06-03 17:07:46,320 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:07:47,436 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy
+2015-06-03 17:08:01,353 : INFO : collecting all words and their counts
+2015-06-03 17:08:01,355 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:08:03,029 : INFO : collected 71171 word types from a corpus of 844265 words and 5000 items
+2015-06-03 17:08:03,151 : INFO : total 71171 word types after removing those with count<1
+2015-06-03 17:08:03,151 : INFO : constructing a huffman tree from 71171 words
+2015-06-03 17:08:11,201 : INFO : built huffman tree with maximum node depth 21
+2015-06-03 17:08:11,255 : INFO : constructing a table with noise distribution from 71171 words
+2015-06-03 17:09:27,897 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:09:28,497 : INFO : resetting layer weights
+2015-06-03 17:09:31,884 : INFO : training model with 3 workers on 71171 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:09:33,072 : INFO : PROGRESS: at 1.51% words, alpha 0.02500, 19662 words/s
+2015-06-03 17:09:34,198 : INFO : PROGRESS: at 5.82% words, alpha 0.02426, 38956 words/s
+2015-06-03 17:09:35,416 : INFO : PROGRESS: at 10.40% words, alpha 0.02341, 45608 words/s
+2015-06-03 17:09:36,659 : INFO : PROGRESS: at 14.60% words, alpha 0.02197, 47371 words/s
+2015-06-03 17:09:38,109 : INFO : PROGRESS: at 18.55% words, alpha 0.02059, 46167 words/s
+2015-06-03 17:09:39,130 : INFO : PROGRESS: at 23.82% words, alpha 0.01980, 50914 words/s
+2015-06-03 17:09:40,168 : INFO : PROGRESS: at 28.01% words, alpha 0.01919, 52365 words/s
+2015-06-03 17:09:41,219 : INFO : PROGRESS: at 32.27% words, alpha 0.01762, 53546 words/s
+2015-06-03 17:09:42,298 : INFO : PROGRESS: at 35.23% words, alpha 0.01693, 52402 words/s
+2015-06-03 17:09:42,974 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:09:43,666 : INFO : PROGRESS: at 40.25% words, alpha 0.01525, 52913 words/s
+2015-06-03 17:09:44,674 : INFO : PROGRESS: at 46.14% words, alpha 0.01439, 55871 words/s
+2015-06-03 17:09:44,675 : INFO : training on 714590 words took 12.8s, 55867 words/s
+2015-06-03 17:09:44,676 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:09:44,676 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:09:46,132 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:09:57,983 : INFO : not storing attribute syn0norm
+2015-06-03 17:09:58,044 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:10:00,155 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy
+2015-06-03 17:10:25,119 : INFO : collecting all words and their counts
+2015-06-03 17:10:25,121 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:10:26,782 : INFO : collected 82347 word types from a corpus of 1037794 words and 6000 items
+2015-06-03 17:10:26,898 : INFO : total 82347 word types after removing those with count<1
+2015-06-03 17:10:26,898 : INFO : constructing a huffman tree from 82347 words
+2015-06-03 17:10:34,415 : INFO : built huffman tree with maximum node depth 22
+2015-06-03 17:10:34,465 : INFO : constructing a table with noise distribution from 82347 words
+2015-06-03 17:11:42,804 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:11:43,368 : INFO : resetting layer weights
+2015-06-03 17:11:47,235 : INFO : training model with 3 workers on 82347 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:11:48,879 : INFO : PROGRESS: at 0.58% words, alpha 0.02500, 6671 words/s
+2015-06-03 17:11:50,033 : INFO : PROGRESS: at 2.57% words, alpha 0.02486, 17486 words/s
+2015-06-03 17:11:51,201 : INFO : PROGRESS: at 5.58% words, alpha 0.02424, 26789 words/s
+2015-06-03 17:11:52,239 : INFO : PROGRESS: at 7.34% words, alpha 0.02350, 27939 words/s
+2015-06-03 17:11:53,407 : INFO : PROGRESS: at 10.72% words, alpha 0.02289, 33109 words/s
+2015-06-03 17:11:54,593 : INFO : PROGRESS: at 13.15% words, alpha 0.02203, 34064 words/s
+2015-06-03 17:11:55,625 : INFO : PROGRESS: at 15.10% words, alpha 0.02141, 34283 words/s
+2015-06-03 17:11:56,806 : INFO : PROGRESS: at 18.92% words, alpha 0.02090, 37659 words/s
+2015-06-03 17:11:57,851 : INFO : PROGRESS: at 20.91% words, alpha 0.02016, 37532 words/s
+2015-06-03 17:11:59,016 : INFO : PROGRESS: at 24.02% words, alpha 0.01930, 38848 words/s
+2015-06-03 17:12:00,160 : INFO : PROGRESS: at 27.55% words, alpha 0.01885, 40609 words/s
+2015-06-03 17:12:01,254 : INFO : PROGRESS: at 31.35% words, alpha 0.01783, 42606 words/s
+2015-06-03 17:12:02,365 : INFO : PROGRESS: at 33.13% words, alpha 0.01727, 41728 words/s
+2015-06-03 17:12:03,789 : INFO : PROGRESS: at 36.84% words, alpha 0.01637, 42408 words/s
+2015-06-03 17:12:04,555 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:12:05,437 : INFO : PROGRESS: at 40.79% words, alpha 0.01500, 42698 words/s
+2015-06-03 17:12:06,612 : INFO : PROGRESS: at 45.04% words, alpha 0.01442, 44289 words/s
+2015-06-03 17:12:07,071 : INFO : training on 879599 words took 19.8s, 44344 words/s
+2015-06-03 17:12:07,072 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:12:07,073 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:12:07,713 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:12:09,599 : INFO : not storing attribute syn0norm
+2015-06-03 17:12:09,608 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:12:10,038 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy
+2015-06-03 17:14:55,509 : INFO : collecting all words and their counts
+2015-06-03 17:14:55,511 : INFO : PROGRESS: at item #0, processed 0 words and 0 word types
+2015-06-03 17:14:57,786 : INFO : collected 92841 word types from a corpus of 1225400 words and 7000 items
+2015-06-03 17:14:57,948 : INFO : total 92841 word types after removing those with count<1
+2015-06-03 17:14:57,948 : INFO : constructing a huffman tree from 92841 words
+2015-06-03 17:15:06,956 : INFO : built huffman tree with maximum node depth 21
+2015-06-03 17:15:07,039 : INFO : constructing a table with noise distribution from 92841 words
+2015-06-03 17:16:08,125 : INFO : frequent-word downsampling, threshold 0.001; progress tallies will be approximate
+2015-06-03 17:16:08,627 : INFO : resetting layer weights
+2015-06-03 17:16:12,677 : INFO : training model with 3 workers on 92841 vocabulary and 300 features, using 'skipgram'=0 'hierarchical softmax'=1 'subsample'=0.001 and 'negative sampling'=5
+2015-06-03 17:16:13,724 : INFO : PROGRESS: at 1.09% words, alpha 0.02500, 23385 words/s
+2015-06-03 17:16:14,921 : INFO : PROGRESS: at 4.73% words, alpha 0.02436, 47457 words/s
+2015-06-03 17:16:16,005 : INFO : PROGRESS: at 7.88% words, alpha 0.02358, 53295 words/s
+2015-06-03 17:16:17,084 : INFO : PROGRESS: at 10.67% words, alpha 0.02261, 54485 words/s
+2015-06-03 17:16:18,429 : INFO : PROGRESS: at 14.35% words, alpha 0.02169, 56120 words/s
+2015-06-03 17:16:19,433 : INFO : PROGRESS: at 17.52% words, alpha 0.02074, 58351 words/s
+2015-06-03 17:16:20,503 : INFO : PROGRESS: at 21.87% words, alpha 0.02062, 62869 words/s
+2015-06-03 17:16:21,758 : INFO : PROGRESS: at 24.65% words, alpha 0.01893, 61088 words/s
+2015-06-03 17:16:22,964 : INFO : PROGRESS: at 29.24% words, alpha 0.01819, 63964 words/s
+2015-06-03 17:16:24,453 : INFO : PROGRESS: at 32.38% words, alpha 0.01720, 61862 words/s
+2015-06-03 17:16:25,798 : INFO : PROGRESS: at 35.84% words, alpha 0.01636, 61459 words/s
+2015-06-03 17:16:27,053 : INFO : PROGRESS: at 39.82% words, alpha 0.01591, 62328 words/s
+2015-06-03 17:16:27,058 : INFO : reached the end of input; waiting to finish 6 outstanding jobs
+2015-06-03 17:16:28,055 : INFO : PROGRESS: at 42.15% words, alpha 0.01504, 61670 words/s
+2015-06-03 17:16:29,153 : INFO : PROGRESS: at 43.89% words, alpha 0.01446, 59940 words/s
+2015-06-03 17:16:29,798 : INFO : training on 1039067 words took 17.1s, 60689 words/s
+2015-06-03 17:16:29,799 : INFO : saving Doc2Vec object under ../models/model.doc2vec, separately None
+2015-06-03 17:16:29,800 : INFO : storing numpy array 'syn1neg' to ../models/model.doc2vec.syn1neg.npy
+2015-06-03 17:16:30,567 : INFO : storing numpy array 'table' to ../models/model.doc2vec.table.npy
+2015-06-03 17:16:32,739 : INFO : not storing attribute syn0norm
+2015-06-03 17:16:32,744 : INFO : storing numpy array 'syn0' to ../models/model.doc2vec.syn0.npy
+2015-06-03 17:16:33,318 : INFO : storing numpy array 'syn1' to ../models/model.doc2vec.syn1.npy

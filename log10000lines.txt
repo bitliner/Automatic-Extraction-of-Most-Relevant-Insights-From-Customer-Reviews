@@ -1,4 +1,0 @@
-The input consisted of 10000 lines. 
-The time to create the doc2vec model was 5.58800196648 
-The time to estimate the bandwidth was 50.5903441906 
-The time to create the clustering was 649.191038132 
