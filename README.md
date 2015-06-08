@@ -7,6 +7,7 @@
 3. [Implementation details](#implementation-details)
 4. [Experiments](#experiments)
 5. [Release cycle](#release-cycle)
+6. [Usage](#usage)
 
 ## Introduction
 
@@ -82,6 +83,26 @@ Simple prototype:
 ### v4 (IV week)
 
 [TBD]
+
+## Usage [under construction]
+
+### 1. How to train a doc2vec model
+
+1. `cd project-folder`
+2. `python main.py train -incremental --input-dataset ./dataset.txt`
+
+### 2. How to extract insights from a set of reviews
+
+1. `cd project-folder`
+2. `python main.py run ./input-folder`
+
+### 3. How to visualize sentences from a set of reviews
+
+1. `cd project-folder`
+2. `python main.py visaulize ./input-folder`
+
+
+
 
 
 

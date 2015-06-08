@@ -1,35 +1,35 @@
 __author__ = 'Wisse'
 
 import gensim as gs
+import nltk
+from HTMLParser import HTMLParser
+import os
+import string
 
-class SentenceSplitter:
-    "Split sentences according to Doc2Vec.LabeledLineSentences in multiple formats"
-    def __init__(self, source):
-        self.source = source
-        self.sentences = gs.models.doc2vec.LabeledLineSentence(source)
-        self.sentences_dict = {}
+stop = nltk.corpus.stopwords.words('english')
 
-    def labeled_line_sentences(self):
-        "Returns LabeledLineSentences of source"
-        #TODO: a newline is a new sentence
+LabeledSentence = gs.models.doc2vec.LabeledSentence
+parser = HTMLParser()
 
-        return self.sentences
-
-    def sentences_to_dict(self):
-        "Returns sentences in dictionary"
-        for sentence in self.sentences:
-            self.sentences_dict[sentence.labels[0]] = sentence.words
-        return self.sentences
-
-    def lookup(self, key):
-        if not self.sentences_dict:
-            self.sentences_to_dict()
-
-        return self.sentences_dict[key]
-
-    def labels(self):
-        self.sentences_to_dict()
-        return self.sentences_dict.keys()
+# iterating object of directory or file
+class MySentences(object):
+    def __init__(self, name):
+        self.name = name
+    def __iter__(self):
+        if os.path.isdir(self.name):
+            """Iterate through the lines in the source directory."""
+            for fname in os.listdir(self.name):
+                for item_no, line in enumerate(open(os.path.join(self.name, fname))):
+                    decoded = parser.unescape(line).lower()
+                    words = [i for i in gs.utils.to_unicode(decoded).split() if i not in stop and not i.isdigit()]
+                    #TODO: add preprocessing here
+                    yield LabeledSentence(words, ['SENT_%s' % item_no])
+        else:
+            for item_no, line in enumerate(open(self.name, 'r')):
+                decoded = parser.unescape(line).lower()
+                words = [i for i in gs.utils.to_unicode(decoded).split() if i not in stop and not i.isdigit()]
+                #TODO: add preprocessing here
+                yield LabeledSentence(words, ['SENT_%s' % item_no])
 
 
 

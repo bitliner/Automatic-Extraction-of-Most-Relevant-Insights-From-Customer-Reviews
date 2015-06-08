@@ -2,39 +2,20 @@ __author__ = 'Wisse'
 
 
 import gensim as gs
-import os
 import sys
-from HTMLParser import HTMLParser
 import logging
-logging.basicConfig(filename="log.txt", format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+import sentence_splitter as s_s
 
+input, series = sys.argv[1], sys.argv[2]
 
-input = sys.argv[1]
+print "This model is called: {0}".format(series)
 
-LabeledSentence = gs.models.doc2vec.LabeledSentence
-parser = HTMLParser()
+logging.basicConfig(filename="logs/{0}log.txt".format(series),
+                    format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-
-# iterating object of directory or file
-class MySentences(object):
-    def __init__(self, name):
-        self.name = name
-    def __iter__(self):
-        if os.path.isdir(self.name):
-            """Iterate through the lines in the source directory."""
-            for fname in os.listdir(self.name):
-                for itme_no, line in enumerate(open(os.path.join(self.name, fname))):
-                    decoded = parser.unescape(line)
-                    #TODO: add preprocessing here
-                    yield LabeledSentence(gs.utils.to_unicode(decoded).split(), ['SENT_%s' % item_no])
-        else:
-            for item_no, line in enumerate(open(self.name, 'r')):
-                decoded = parser.unescape(line)
-                #TODO: add preprocessing here
-                yield LabeledSentence(gs.utils.to_unicode(decoded).split(), ['SENT_%s' % item_no])
 
 # create object of command line input
-sentences = MySentences(input)
+sentences = s_s.MySentences(input)
 
 
 # create model
@@ -43,7 +24,8 @@ model_dm = gs.models.Doc2Vec(min_count=1, window=10, sample=1e-3, negative=5, wo
 model_dm.build_vocab(sentences)
 model_dm.train(sentences)
 print "Done training"
-model_dm.save("../models/model-amazone-review-all.doc2vec")
+print model_dm.similarity("cords", "hotspot")
+model_dm.save("models/model{0}.doc2vec".format(series), separately=None)
 
 
 
