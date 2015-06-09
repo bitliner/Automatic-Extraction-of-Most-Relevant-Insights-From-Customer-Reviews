@@ -1,12 +1,14 @@
 __author__ = 'Wisse'
 
 
+
 import gensim as gs
 import sys
 import logging
 import sentence_splitter as s_s
 
 input, series = sys.argv[1], sys.argv[2]
+size = 300 # default
 
 print "This model is called: {0}".format(series)
 

@@ -6,4 +6,4 @@ cd $SCRIPT_HOME/..
 
 # main script
 echo "---> Moving files to remote machine on gcloud"
-# write here the command for gcloud
+gcloud compute copy-files test_data.txt w_barkhof_gmail_com@word2vec-model-amazone-reviews:/home/w_barkhof_gmail_com

@@ -18,72 +18,24 @@ Processes commandline argument according to following scheme:
 3. Clustering on the whole corpus of sentences
 4. Selection of the best insights from the clusters resulting from previous step
 """
+size = 300 # default
 
-# import data and model from command line
+# import data to be clustered and model from command line
 data, model = sys.argv[1], sys.argv[0]
 
 # split data into sentences
 sentences = ssp.MySentences(data)
-
-# grab lables from labeled sentences
 
 #Get training set vectors from our models
 def getVecs(model, corpus, size):
     vecs = [np.array(model[z.labels[0]]).reshape((1, size)) for z in corpus]
     return np.concatenate(vecs)
 
+data_vecs = getVecs(model, data, size)
 
-# grab feature vectors
-data = []
+print "Grabbed the data's feature vectors... "
 
-for i in labels:
-    try:
-        vector = feature_model[i]
-        data.append(vector)
-    except KeyError:
-        continue
-
-
-
-print "Grabbed the feature vectors... "
-
-
-begin = time.time()
-# estimate bandwidth
-
-data = np.array(data)
-bandwidth = estimate_bandwidth(data)
-
-print bandwidth
-
-print "Estimated bandwidth"
-
-bandwidth_time = time.time() - begin
-
-begin = time.time()
-# create model
-train_model = MeanShift(bandwidth=bandwidth)
-train_model.fit(data)
-cluster_time = time.time() - begin
-
-print "Trained the model..."
-
-c_labels = train_model.labels_
-centers = train_model.cluster_centers_
-
-print "labels are: {0}".format(c_labels)
-print "centerss are: {0}".format(centers)
-
-# prediction
-
-for label in labels:
-    try:
-        vector = np.array(feature_model[label])
-        pred = train_model.predict(vector)
-    except KeyError:
-        continue
-
-    print sentences.lookup(i), pred
+# clustering
 
 
 file = open("log{0}lines.txt".format(lines),'w')

@@ -15,6 +15,7 @@ parser = HTMLParser()
 class MySentences(object):
     def __init__(self, name):
         self.name = name
+        self.labels = []
     def __iter__(self):
         if os.path.isdir(self.name):
             """Iterate through the lines in the source directory."""
@@ -23,13 +24,21 @@ class MySentences(object):
                     decoded = parser.unescape(line).lower()
                     words = [i for i in gs.utils.to_unicode(decoded).split() if i not in stop and not i.isdigit()]
                     #TODO: add preprocessing here
-                    yield LabeledSentence(words, ['SENT_%s' % item_no])
+                    label = 'SENT_%s' % item_no
+                    if label not in self.labels:
+                        self.labels.append(label)
+                    yield LabeledSentence(words, [label])
         else:
             for item_no, line in enumerate(open(self.name, 'r')):
                 decoded = parser.unescape(line).lower()
                 words = [i for i in gs.utils.to_unicode(decoded).split() if i not in stop and not i.isdigit()]
                 #TODO: add preprocessing here
-                yield LabeledSentence(words, ['SENT_%s' % item_no])
+                label = 'SENT_%s' % item_no
+                if label not in self.labels:
+                    self.labels.append(label)
+                yield LabeledSentence(words, [label])
+
+
 
 
 
