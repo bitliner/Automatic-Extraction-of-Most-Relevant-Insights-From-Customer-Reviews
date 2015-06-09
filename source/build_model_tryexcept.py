@@ -12,6 +12,7 @@ try:
 
     print "This model is called: {0}".format(series)
 
+
     logging.basicConfig(filename="logs/{0}log.txt".format(series),
                     format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
