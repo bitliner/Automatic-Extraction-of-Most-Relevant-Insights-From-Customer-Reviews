@@ -27,8 +27,8 @@ model_dm = gs.models.Doc2Vec(min_count=1, window=10, sample=1e-3, negative=5, wo
 print "Building vocab for the model now..."
 model_dm.build_vocab(sentences)
 print "The model has {0} sentences.".format(sentences.size)
-print "Memory usage after building vocab: "
-print h.heap()
+print "Memory usage (MB) after building vocab: "
+print h.heap().size / 1000000
 
 h = hpy()
 # training the model
@@ -36,7 +36,7 @@ print "Training the model now..."
 model_dm.train(sentences)
 print "Done training."
 print "Memory usage after training: "
-print h.heap()
+print h.heap().size / 1000000
 
 # testing
 print model_dm.similarity("cords", "hotspot")
