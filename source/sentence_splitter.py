@@ -69,7 +69,11 @@ class MySentences(object):
                     yield LabeledSentence(words, [label])
 
 
-
+    def retrieve_sentence(self, index):
+        iterate = iter(self)
+        while self.size == index -1:
+            iterate.next()
+        return iterate.next()
 
 
 
