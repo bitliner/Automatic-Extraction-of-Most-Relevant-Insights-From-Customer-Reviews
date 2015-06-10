@@ -4,7 +4,9 @@ import gensim as gs
 import numpy as np
 import sys
 import sentence_splitter as ssp
+import fastcluster as fc
 import visualization
+import scipy.cluster.hierarchy as hac
 
 size = 300
 
@@ -20,12 +22,20 @@ sentences = ssp.MySentences(data)
 
 #Get training set vectors from our models
 def getVecs(model, corpus, size):
-    for z in corpus:
-        print z
     vecs = [np.array(model[z.labels[0]]).reshape((1, size)) for z in corpus]
     return np.concatenate(vecs)
 
 data_vecs = getVecs(model, data, size)
 
 # visualize using tSNE
-visualization.visualize(data_vecs)
+#TODO: (tsne does not work on virtual machine)
+# visualization.visualize(data_vecs)
+
+links = fc.linkage(data_vecs, metric='cosine',method='average')
+
+n = sentences.size
+
+# first nodes to group together
+index1, index2 = links[-1, 0] - n, links[-1, 1] - n
+
+print sentences.retrieve_sentence(index1), sentences.retrieve_sentence(index2)
