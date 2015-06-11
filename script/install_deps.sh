@@ -8,8 +8,10 @@ cd $SCRIPT_HOME/..
 
 function install_os_deps() {
 	echo '---> Installing os dependencies...'
+	sudo apt-get install python-dev
 	sudo apt-get install python-pip
 	sudo apt-get install gfortran libopenblas-dev liblapack-dev
+	sudo pip install virtualenvwrapper
 }
 
 function install_program_deps() {
@@ -18,5 +20,7 @@ function install_program_deps() {
 	pip install scipy
 }
 
-install_os_deps && install_program_deps
+#install_os_deps 
+#&& 
+install_program_deps
 
