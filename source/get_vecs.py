@@ -17,5 +17,5 @@ def getVecs(model, corpus, size):
     return np.concatenate(vecs)
 
 def get_data_vecs(model_path, data_path, size):
-    return getVecs(create_sentences(data_path), create_model(model_path), size)
+    return getVecs(create_model(model_path),create_sentences(data_path), size)
 
