@@ -42,7 +42,7 @@ print h.heap().size / 1000000
 print model_dm.similarity("cords", "hotspot")
 
 # saving
-model_dm.save("models/model{0}.doc2vec".format(series), separately=None)
+model_dm.save("models/{0}/model{0}.doc2vec".format(series), separately=None)
 
 
 

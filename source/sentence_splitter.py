@@ -75,6 +75,14 @@ class MySentences(object):
             iterate.next()
         return iterate.next()
 
+    def get_sentences(self):
+        iterate = iter(self)
+        words = []
+        for i in iterate:
+            words.append(i.words)
+        return words
+
+
 
 
 
