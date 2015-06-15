@@ -22,7 +22,7 @@ tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 # iterating object of directory or file
 class MySentences(object):
     def __init__(self, name, log=True):
-        self.punctuation = """.,?!:;(){}[]"""
+        self.punctuation = """.,?!:;(){}[]'"/\`"""
         self.name = name
         self.labels = []
         self.size = 0
@@ -43,6 +43,10 @@ class MySentences(object):
                         words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
                         label = 'SENT_%s' % item_no
 
+                        # skip empty sentences
+                        if not words:
+                            continue
+
                         # store labels
                         if label not in self.labels:
                             self.labels.append(label)
@@ -56,7 +60,7 @@ class MySentences(object):
         else:
             for line in open(self.name, 'r'):
                 for c in self.punctuation:
-                    line = line.replace(c, ' %s '%c)
+                    line = line.replace(c, ' %s '% c)
                 sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                 for item_no, sentence in enumerate(sentences):
                     # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
@@ -64,6 +68,9 @@ class MySentences(object):
                     words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
                     label = 'SENT_%s' % item_no
 
+                    # skip empty sentences
+                    if not words:
+                        continue
                     # store labels
                     if label not in self.labels:
                         self.labels.append(label)
