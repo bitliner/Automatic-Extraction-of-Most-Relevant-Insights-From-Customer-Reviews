@@ -44,7 +44,7 @@ print "Memory usage after training: "
 print h.heap().size / 1000000
 
 # saving
-model_dm.save("models/{0}/model{size}.doc2vec".format(series, size), separately=None)
+model_dm.save("models/{0}/model{1}.doc2vec".format(series, size), separately=None)
 
 
 
