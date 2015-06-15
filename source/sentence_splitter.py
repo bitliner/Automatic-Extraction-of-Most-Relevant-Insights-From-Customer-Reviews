@@ -43,6 +43,10 @@ class MySentences(object):
                         words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
                         label = 'SENT_%s' % item_no
 
+                        # skip empty sentences
+                        if not words:
+                            continue
+
                         # store labels
                         if label not in self.labels:
                             self.labels.append(label)
@@ -64,6 +68,9 @@ class MySentences(object):
                     words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
                     label = 'SENT_%s' % item_no
 
+                    # skip empty sentences
+                    if not words:
+                        continue
                     # store labels
                     if label not in self.labels:
                         self.labels.append(label)
