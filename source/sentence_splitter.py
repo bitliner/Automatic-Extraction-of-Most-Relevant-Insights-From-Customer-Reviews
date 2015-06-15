@@ -34,7 +34,7 @@ class MySentences(object):
             for fname in os.listdir(self.name):
                 for line in open(os.path.join(self.name, fname)):
                     for c in self.punctuation:
-                        line = [z.replace(c, ' %s '%c) for z in line]
+                        line = line.replace(c, ' %s '%c)
                     sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                     for item_no, sentence in enumerate(sentences):
                         # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
@@ -56,7 +56,7 @@ class MySentences(object):
         else:
             for line in open(self.name, 'r'):
                 for c in self.punctuation:
-                    line = [z.replace(c, ' %s '%c) for z in line]
+                    line = line.replace(c, ' %s '%c)
                 sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                 for item_no, sentence in enumerate(sentences):
                     # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
