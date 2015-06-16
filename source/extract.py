@@ -14,9 +14,12 @@ size = 400
 # import data to be clustered from command line
 data_path = sys.argv[1]
 
-model_path = sys.argv[2]
 # load model from command line
+model_path = sys.argv[2]
 model = gs.models.Doc2Vec.load(model_path)
+
+# name for output
+filename = sys.argv[3]
 
 # split data into sentences
 sentences = ssp.MySentences(data_path)
@@ -36,8 +39,8 @@ data_vecs = getVecs(model, sentences, size)
 print "Calculating the linkage matrix, metric = cosine, method = average"
 links = fc.linkage(data_vecs, metric='cosine',method='average')
 
-print "Saving the model to: results/" + data_path + "/linkage"
-file = open('results/' + data_path + '/linkage', 'rb')
+print "Saving the model to: results/" + filename + "/linkage"
+file = open('results/' + filename + '/linkage', 'rb')
 pickle.dump(links, file)
 file.close()
 
