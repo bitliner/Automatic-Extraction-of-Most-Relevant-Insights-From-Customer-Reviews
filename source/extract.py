@@ -40,7 +40,7 @@ print "Calculating the linkage matrix, metric = cosine, method = average"
 links = fc.linkage(data_vecs, metric='cosine',method='average')
 
 print "Saving the model to: results/" + filename + "/linkage"
-file = open('results/' + filename + '/linkage', 'rb')
+file = open('results/' + filename + '_linkage', 'rb')
 pickle.dump(links, file)
 file.close()
 
