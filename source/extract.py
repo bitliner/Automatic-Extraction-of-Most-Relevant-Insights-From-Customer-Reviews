@@ -8,7 +8,7 @@ import fastcluster as fc
 # import visualization
 import scipy.cluster.hierarchy as hac
 
-size = 300
+size = 400
 
 # import data to be clustered from command line
 data_path = sys.argv[1]
@@ -40,3 +40,4 @@ index1, index2 = links[-1, 0] - n, links[-1, 1] - n
 print index1, index2
 sim = links[-1, 2]
 print sim, sentences.retrieve_sentence(index1), sentences.retrieve_sentence(index2)
+
