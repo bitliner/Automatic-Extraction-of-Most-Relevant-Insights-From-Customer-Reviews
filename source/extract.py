@@ -39,12 +39,8 @@ data_vecs = getVecs(model, sentences, size)
 print "Calculating the linkage matrix, metric = cosine, method = average"
 links = fc.linkage(data_vecs, metric='cosine',method='average')
 
-# create file
-file = open('results/' + filename + '_linkage', 'a')
-file.close()
-
 print "Saving the model to: results/" + filename + "/linkage"
-file = open('results/' + filename + '_linkage', 'rb')
+file = open('results/' + filename + '_linkage', 'wb')
 pickle.dump(links, file)
 file.close()
 
