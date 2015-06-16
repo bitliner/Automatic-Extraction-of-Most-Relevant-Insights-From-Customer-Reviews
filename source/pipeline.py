@@ -46,6 +46,15 @@ file.write('The time to create the clustering was {0} \n'.format(cluster_time))
 file.close()
 
 
+###
+### example of simple pipeline, using external modules
+
+# text=readfile('...')
+# sentences=ssp.split(text)
+# vectors=sentence2vec(sentences)
+# clusters=clustering.run(vectors)
+# output_file=visualizer.render(clusters)
+
 
 
 
