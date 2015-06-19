@@ -16,8 +16,8 @@ level = int(sys.argv[6])
 
 data_vecs = get_vecs.get_data_vecs(model_path, test_data_path, vector_size)
 
-links = extract.cluster(data_vecs, exp_name, save)
+links = extract.cluster(data_vecs, exp_name, save=save)
 
-nmi = evaluate.evaluate(test_data_path, links, save, level)
+nmi = evaluate.evaluate(test_data_path, links, save=save, level=level)
 
 
