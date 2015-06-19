@@ -16,7 +16,7 @@ import tree
 
 
 
-def evaluate(labeled_data, linkage_file, p, stop, save=True):
+def evaluate(labeled_data, linkage_file, p, stop, output, save=True):
     # construct labels
     sentences = sp.MySentences(labeled_data, stop=stop)
     lines = np.array(sentences.get_sentences())
@@ -103,7 +103,7 @@ def evaluate(labeled_data, linkage_file, p, stop, save=True):
         num_singletons = []
         num_clusters = []
 
-        file = open('results/assess_evaluation/%s.txt' % p, 'w')
+        file = open('results/'+ str(output)+ '/%s.txt' % p, 'w')
         singles = [i for i in den['leaves'] if i < n]
 
         num_clusters.append(len(den['leaves']))
