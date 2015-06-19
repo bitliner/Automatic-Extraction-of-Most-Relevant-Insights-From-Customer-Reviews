@@ -10,9 +10,9 @@ test_data_path = sys.argv[1]
 model_path = sys.argv[2]
 exp_name = sys.argv[3]
 
-vector_size = sys.argv[4]
+vector_size = int(sys.argv[4])
 save = sys.argv[5]
-level = sys.argv[6]
+level = int(sys.argv[6])
 
 data_vecs = get_vecs.get_data_vecs(model_path, test_data_path, vector_size)
 
