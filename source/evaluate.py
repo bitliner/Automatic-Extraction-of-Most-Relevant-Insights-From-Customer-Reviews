@@ -59,11 +59,11 @@ def evaluate(labeled_data, linkage_file, p, save=True):
     n = sentences.size
 
     # find indexes of leaves
-    def llf(id, tree):
+    def llf(id, link_tree):
         if id < n:
             return [id]
         else:
-            return tree.search_tree(tree, id)
+            return tree.search_tree(link_tree, id)
 
     # untokenize labeled sentences
     for label in labeled:
