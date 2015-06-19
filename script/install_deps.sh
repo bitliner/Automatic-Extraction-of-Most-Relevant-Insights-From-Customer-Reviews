@@ -10,10 +10,15 @@ function enter_env(){
 }
 function install_os_deps() {
 	echo '---> Installing os dependencies...'
+	sudo apt-get install python-dev
 	sudo apt-get install python-pip
 	sudo apt-get install gfortran libopenblas-dev liblapack-dev
+<<<<<<< HEAD
+	sudo pip install virtualenvwrapper
+=======
 	sudo apt-get install libffi-dev libssl-dev
 	sudo apt-get install freetype*
+>>>>>>> b075ff3517a371bbadf41e28ed1171aef28946d8
 }
 
 function install_matplotlib() { 
@@ -32,5 +37,7 @@ function install_program_deps() {
 	pip install -U nltk
 }
 
-install_os_deps && install_program_deps
+#install_os_deps 
+#&& 
+install_program_deps
 
