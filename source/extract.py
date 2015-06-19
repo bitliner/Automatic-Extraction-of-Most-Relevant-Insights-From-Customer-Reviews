@@ -10,7 +10,7 @@ import scipy.cluster.hierarchy as hac
 import pickle
 
 def cluster(data_vecs, filename, method='average', metric='cosine', save=True):
-    print "Calculating the linkage matrix, metric = %s, method = %s" % metric, method
+    print "Calculating the linkage matrix, metric = {0}, method = {1}".format(metric, method)
     links = fc.linkage(data_vecs, metric=metric,method=method)
 
     if save:
