@@ -22,13 +22,14 @@ tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 
 # iterating object of directory or file
 class MySentences(object):
-    def __init__(self, name, log=True):
+    def __init__(self, name, log=True, stop=True):
         self.punctuation = """.,?!:;(){}[]/\ """
         self.quotations = """`"'"""
         self.name = name
         self.labels = []
         self.size = 0
-        self.log = True
+        self.log = log
+        self.remove_stop_words = stop
     def __iter__(self):
         """Iterate through the lines in file or in files in source directory."""
         self.size = 0
@@ -46,6 +47,10 @@ class MySentences(object):
 
                         words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
                         label = 'SENT_%s' % item_no
+
+                        # stopwords
+                        if self.remove_stop_words:
+                            words = [word for word in words if word not in stop]
 
                         # skip empty sentences
                         if not words:
@@ -72,6 +77,10 @@ class MySentences(object):
                     # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
                     decoded = parser.unescape(sentence).lower()
                     words = [i.replace("\u2022", '') for i in decoded.split() if not i.isdigit()]
+
+                    # stopwords
+                    if self.remove_stop_words:
+                        words = [word for word in words if word not in stop]
                     label = 'SENT_%s' % item_no
 
                     # skip empty sentences

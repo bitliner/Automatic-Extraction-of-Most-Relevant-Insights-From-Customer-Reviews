@@ -17,7 +17,7 @@ import tree
 sys.setrecursionlimit(10000)
 
 
-def render(linkage_file, test_data, file_name, level, fig_height=20, fig_width=8):
+def render(linkage_file, test_data, file_name, stop, level, fig_height=20, fig_width=8):
     fontsize = 4
 
     # construct labels

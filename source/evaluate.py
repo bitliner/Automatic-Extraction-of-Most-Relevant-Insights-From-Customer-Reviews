@@ -16,9 +16,9 @@ import tree
 
 
 
-def evaluate(labeled_data, linkage_file, p, save=True):
+def evaluate(labeled_data, linkage_file, p, stop, save=True):
     # construct labels
-    sentences = sp.MySentences(labeled_data)
+    sentences = sp.MySentences(labeled_data, stop=stop)
     lines = np.array(sentences.get_sentences())
 
     # load linkage matrix

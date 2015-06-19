@@ -9,10 +9,10 @@ import logging
 import sentence_splitter as s_s
 
 
-def train(data, series, size, training_rounds=10, workers=8, min_count=10, save=True):
+def train(data, series, size, training_rounds=10, workers=8, min_count=10, save=True, stop=True):
     """Train a doc2vec model on given input data, saves in:
     models/[series]/model[size].doc2vec
-    NOTE: make-dir series first"""
+    NOTE: mkdir models/[series]/ first"""
 
     print "This model is called: {0}".format(series)
 
@@ -22,7 +22,7 @@ def train(data, series, size, training_rounds=10, workers=8, min_count=10, save=
 
 
     # create object of command line input
-    sentences = s_s.MySentences(data)
+    sentences = s_s.MySentences(data, stop=stop)
 
     h = hpy()
     # create model
