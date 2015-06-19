@@ -18,8 +18,9 @@ method = str(sys.argv[8])
 
 data_vecs = get_vecs.get_data_vecs(model_path, test_data_path, vector_size, stop=stop)
 
-links = extract.cluster(data_vecs, exp_name, save=save)
+links = extract.cluster(data_vecs, save=save, method=method)
 
-nmi = evaluate.evaluate(test_data_path, links, level, save=save, stop=stop)
+# needs labeled data!
+nmi = evaluate.evaluate(test_data_path, links, level, stop, exp_name, save=save)
 
 
