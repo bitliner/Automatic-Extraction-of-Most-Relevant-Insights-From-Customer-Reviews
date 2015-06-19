@@ -5,7 +5,6 @@ import gensim as gs
 import sentence_splitter as ssp
 import scipy.cluster.hierarchy as hac
 
-size = 300
 def create_sentences(data_path):
     return ssp.MySentences(data_path)
 

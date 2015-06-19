@@ -15,14 +15,16 @@ parser = HTMLParser()
 tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 
 
-#TODO: Splits lines not sentences!
+#TODO: spell check?
+#todo: remove product specific terms (airfryer) ?
 
 
 
 # iterating object of directory or file
 class MySentences(object):
     def __init__(self, name, log=True):
-        self.punctuation = """.,?!:;(){}[]'"/\`"""
+        self.punctuation = """.,?!:;(){}[]/\ """
+        self.quotations = """`"'"""
         self.name = name
         self.labels = []
         self.size = 0
@@ -35,6 +37,8 @@ class MySentences(object):
                 for line in open(os.path.join(self.name, fname)):
                     for c in self.punctuation:
                         line = line.replace(c, ' %s '%c)
+                    for q in self.quotations:
+                        line = line.replace(q, '')
                     sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                     for item_no, sentence in enumerate(sentences):
                         # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
@@ -61,6 +65,8 @@ class MySentences(object):
             for line in open(self.name, 'r'):
                 for c in self.punctuation:
                     line = line.replace(c, ' %s '% c)
+                for q in self.quotations:
+                    line = line.replace(q, ' ')
                 sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                 for item_no, sentence in enumerate(sentences):
                     # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode

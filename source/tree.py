@@ -9,19 +9,6 @@ import sentence_splitter as sp
 
 sys.setrecursionlimit(10000)
 
-# construct labels
-sentences = sp.MySentences('data/test_data.txt')
-words = np.array(sentences.get_sentences())
-
-
-# load linkage matrix
-pickle_file = open(sys.argv[1], 'rb')
-links = pickle.load(pickle_file)
-
-n = sentences.size
-
-tree = hac.to_tree(links)
-
 def search_tree(tree, id):
     if tree.get_id() == id:
         return tree.pre_order()

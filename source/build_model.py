@@ -9,43 +9,48 @@ import logging
 import sentence_splitter as s_s
 
 
-input, series = sys.argv[1], sys.argv[2]
-size = 400 # default
+def train(data, series, size, training_rounds=10, workers=8, min_count=10, save=True):
+    """Train a doc2vec model on given input data, saves in:
+    models/[series]/model[size].doc2vec
+    NOTE: make-dir series first"""
 
-print "This model is called: {0}".format(series)
+    print "This model is called: {0}".format(series)
 
-logging.basicConfig(filename="logs/{0}log.txt".format(series),
+    # log
+    logging.basicConfig(filename="logs/{0}log.txt".format(series),
                     format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
 
-# create object of command line input
-sentences = s_s.MySentences(input)
+    # create object of command line input
+    sentences = s_s.MySentences(data)
 
-h = hpy()
-# create model
-model_dm = gs.models.Doc2Vec(min_count=10, window=10, sample=1e-3, negative=5,
-                             workers=8, alpha=0.025, min_alpha=0.025, size=size)
-print "Building vocab for the model now..."
-model_dm.build_vocab(sentences)
-print "The model has {0} sentences.".format(sentences.size)
-print "Memory usage (MB) after building vocab: "
-print h.heap().size / 1000000
+    h = hpy()
+    # create model
+    model_dm = gs.models.Doc2Vec(min_count=min_count, window=10, sample=1e-3, negative=5,
+                             workers=workers, alpha=0.025, min_alpha=0.025, size=size)
 
-# training the model
-h = hpy()
-for epoch in range(10):
-    print "Training the model now, epoch no. %s" % epoch
-    model_dm.train(sentences)
-    model_dm.alpha -= 0.002
-    model_dm.min_alpha = model_dm.alpha
+    print "Building vocab for the model now..."
+    model_dm.build_vocab(sentences)
+    print "The model has {0} sentences.".format(sentences.size)
+    print "Memory usage (MB) after building vocab: "
+    print h.heap().size / 1000000
 
-print "Done training."
-print "Memory usage after training: "
-print h.heap().size / 1000000
+    # training the model
+    h = hpy()
+    for epoch in range(training_rounds):
+        print "Training the model now, epoch no. %s" % epoch
+        model_dm.train(sentences)
+        model_dm.alpha -= 0.002
+        model_dm.min_alpha = model_dm.alpha
 
-# saving
-model_dm.save("models/{0}/model{1}.doc2vec".format(series, size), separately=None)
+    print "Done training."
+    print "Memory usage after training: "
+    print h.heap().size / 1000000
 
+    # saving
+    if save:
+        model_dm.save("models/{0}/model{1}.doc2vec".format(series, size), separately=None)
+    return model_dm
 
 
 

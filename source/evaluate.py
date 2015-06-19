@@ -7,85 +7,123 @@ label1 text text text text
 label2 text text text text
 """
 
-import sys
-import matplotlib.pyplot as plt
 import numpy as np
 import scipy.cluster.hierarchy as hac
 import pickle
 import sentence_splitter as sp
-from sklearn import metrics
 import math
+import tree
 
 
 
-# construct labels
-sentences = sp.MySentences(sys.argv[1])
-lines = np.array(sentences.get_sentences())
+def evaluate(labeled_data, linkage_file, p, save=True):
+    # construct labels
+    sentences = sp.MySentences(labeled_data)
+    lines = np.array(sentences.get_sentences())
 
-# load linkage matrix
-pickle_file = open(sys.argv[2], 'rb')
-links = pickle.load(pickle_file)
-tree = hac.to_tree(links)
-
-# parameter for truncate mode of dendogram
-p = int(sys.argv[3])
-
-# intialize variables to save the labels
-labeled = []
-processed = []
-
-index_map = {}
-label_map = {}
-
-count = 0
-# create tuples from raw text with (label, sentence)
-for line in lines:
-    label, text = line[0], line[1:]
-    index_map[count] = label
-    labeled.append((label, text))
-    count += 1
-
-# create inverse of index_map (values <-> keys)
-for k, v in index_map.iteritems():
+    # load linkage matrix
     try:
-        label_map[v].append(k)
-    except Exception:
-        label_map[v] = [k]
+        links = pickle.load(open(linkage_file, 'rb'))
+    except:
+        links = linkage_file
 
-# search the tree
-def search_tree(tree, id):
-    if tree.get_id() == id:
-        return tree.pre_order()
-    if tree.is_leaf():
-        return []
-    return search_tree(tree.get_left(), id) + search_tree(tree.get_right(), id)
+    link_tree = hac.to_tree(links)
 
-# number of instances
-n = sentences.size
+    # intialize variables to save the labels
+    labeled = []
+    processed = []
 
-# find indexes of leaves
-def llf(id, tree):
-    if id < n:
-        return [id]
-    else:
-        return search_tree(tree, id)
+    # index map: index -> label
+    index_map = {}
+    count = 0
+    # create tuples from raw text with (label, sentence)
+    for line in lines:
+        label, text = line[0], line[1:]
+        index_map[count] = label
+        labeled.append((label, text))
+        count += 1
 
-# untokenize labeled sentences
-for label in labeled:
-    label, text = label[0], label[1]
-    text = ' '.join([word.encode('ascii', 'ignore') for word in text])
-    processed.append((label, text))
 
-# create dendrogram of level 'p'
-den = hac.dendrogram(links, orientation='right', p=p, truncate_mode='level', labels=processed,
+    # label map: label -> index
+    label_map = {}
+
+    # create inverse of index_map (values <-> keys)
+    for k, v in index_map.iteritems():
+        try:
+            label_map[v].append(k)
+        except Exception:
+            label_map[v] = [k]
+
+
+    # number of instances
+    n = sentences.size
+
+    # find indexes of leaves
+    def llf(id, tree):
+        if id < n:
+            return [id]
+        else:
+            return tree.search_tree(tree, id)
+
+    # untokenize labeled sentences
+    for label in labeled:
+        label, text = label[0], label[1]
+        text = ' '.join([word.encode('ascii', 'ignore') for word in text])
+        processed.append((label, text))
+
+    # create dendrogram of level 'p'
+    den = hac.dendrogram(links, orientation='right', p=p, truncate_mode='level', labels=processed,
                       show_leaf_counts=True, get_leaves=True)
 
-# collect clusters in dict
-clusters = {}
-for leave in den['leaves']:
-    clusters[leave] = llf(leave, tree)
+    # collect clusters in dict
+    clusters = {}
+    for leave in den['leaves']:
+        clusters[leave] = llf(leave, link_tree)
 
-# auxillary function
+    pur_out = purity(clusters, n)
+    print "Purity: "
+    print pur_out
+
+    nmi_out = nmi(label_map, clusters,  n)
+    print "NMI: "
+    print nmi_out
+
+    if save:
+        # writing output to file
+        def find_sentence(id):
+            if id < n:
+                label = "Singleton: " + str(processed[id]) + '\n'
+                return label
+            else:
+                indeces = tree.search_tree(link_tree, id)
+                sentences = [str(processed[index]) for index in indeces]
+                output = [str(len(sentences)) + " ------------------------------------------"] + sentences
+                return '\n'.join(output)
+
+        num_singletons = []
+        num_clusters = []
+
+        file = open('results/assess_evaluation/%s.txt' % p, 'w')
+        singles = [i for i in den['leaves'] if i < n]
+
+        num_clusters.append(len(den['leaves']))
+        num_singletons.append(len(singles))
+
+        file.write('Number of clusters: %s \n' % len(den['leaves']))
+        file.write('Number of singletons: %s \n\n' % len(singles))
+        file.write('Purity: %s \n' % pur_out)
+        file.write('NMI: %s\n' % nmi_out)
+
+        for id in den['leaves']:
+            file.write(find_sentence(id))
+            file.write('\n\n\n\n\n\n')
+        file.close()
+
+    return nmi_out, pur_out
+
+
+
+# auxillary function to find most common element in list
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
@@ -127,41 +165,3 @@ def nmi(classes, clusters, n):
     cluster_entropy = entropy(clusters, n)
     normalizer = (cluster_entropy + class_entropy)/2
     return mutual_information(classes, clusters, n)/normalizer
-
-pur_out = purity(clusters, n)
-print "Purity: "
-print pur_out
-
-nmi_out = nmi(label_map, clusters,  n)
-print "NMI: "
-print nmi_out
-
-# writing output to file
-def llf(id):
-    if id < n:
-        label = "Singleton: " + str(processed[id]) + '\n'
-        return label
-    else:
-        indeces = search_tree(tree, id)
-        sentences = [str(processed[index]) for index in indeces]
-        output = [str(len(sentences)) + " ------------------------------------------"] + sentences
-        return '\n'.join(output)
-
-num_singletons = []
-num_clusters = []
-
-file = open('results/assess_evaluation/%s.txt' % p, 'w')
-singles = [i for i in den['leaves'] if i < n]
-
-num_clusters.append(len(den['leaves']))
-num_singletons.append(len(singles))
-
-file.write('Number of clusters: %s \n' % len(den['leaves']))
-file.write('Number of singletons: %s \n\n' % len(singles))
-file.write('Purity: %s \n' % pur_out)
-file.write('NMI: %s\n' % nmi_out)
-
-for id in den['leaves']:
-    file.write(llf(id))
-    file.write('\n\n\n\n\n\n')
-file.close()
