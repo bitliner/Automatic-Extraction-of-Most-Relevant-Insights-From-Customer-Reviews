@@ -6,14 +6,15 @@ import sys
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.cluster.hierarchy as hac
-import pickle
 import sentence_splitter as sp
 import tree
+import time
 
 sys.setrecursionlimit(10000)
 
 
 def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20, fig_width=8):
+    begin = time.time()
     fontsize = 4
 
     # construct labels
@@ -51,13 +52,13 @@ def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20,
                      leaf_label_func=llf, leaf_font_size=fontsize, show_leaf_counts=True, get_leaves=True)
 
 
-    plt.savefig('results/' + file_name +'/dendrogram' + str(level) + '.png')
+    plt.savefig('results/dendrograms/' + file_name +'_dendrogram_' + str(level) + '.png')
 
     if show:
         plt.show()
 
     # print indexes and corresponding labels to terminal and file
-    output = open('results/' + file_name + 'clusters' + str(level) + '.txt', 'w')
+    output = open('results/lists-of-clusters/' + file_name + '_clusters_' + str(level) + '.txt', 'w')
 
     def find_sentence(id):
         if id < n:
@@ -77,8 +78,10 @@ def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20,
     num_clusters.append(len(den['leaves']))
     num_singletons.append(len(singles))
 
+    output.write('Data: {0}, Level: {1}, Remove Stopwords: {2} '.format(test_data,level, stop))
     output.write('Number of clusters: %s \n' % len(den['leaves']))
     output.write('Number of singletons: %s \n\n' % len(singles))
+    output.write('Execution time: %s'%(time.time() - begin))
 
     for id in den['leaves']:
         output.write(find_sentence(id))
