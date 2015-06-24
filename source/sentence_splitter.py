@@ -23,8 +23,7 @@ tokenizer = nltk.data.load('tokenizers/punkt/english.pickle')
 # iterating object of directory or file
 class MySentences(object):
     def __init__(self, name, log=True, stop=True):
-        self.punctuation = """.,?!:;(){}[]/\ """
-        self.quotations = """`"'"""
+        self.punctuation = """\n,?!:;(){}[]/\\\'\"*&%^#@-"""
         self.name = name
         self.labels = []
         self.size = 0
@@ -37,9 +36,7 @@ class MySentences(object):
             for fname in os.listdir(self.name):
                 for line in open(os.path.join(self.name, fname)):
                     for c in self.punctuation:
-                        line = line.replace(c, ' %s '%c)
-                    for q in self.quotations:
-                        line = line.replace(q, '')
+                        line = line.replace(c, '')
                     sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                     for item_no, sentence in enumerate(sentences):
                         # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
@@ -69,9 +66,7 @@ class MySentences(object):
         else:
             for line in open(self.name, 'r'):
                 for c in self.punctuation:
-                    line = line.replace(c, ' %s '% c)
-                for q in self.quotations:
-                    line = line.replace(q, ' ')
+                    line = line.replace(c, '')
                 sentences = tokenizer.tokenize(gs.utils.to_unicode(line))
                 for item_no, sentence in enumerate(sentences):
                     # preprocessing: remove HTML, stopwords, numbers; convert to lowercase & unicode
