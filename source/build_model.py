@@ -49,7 +49,10 @@ def train(data, series, size, training_rounds=10, workers=8, min_count=10, save=
 
     # saving
     if save:
-        model_dm.save("models/{0}/model{1}.doc2vec".format(series, size), separately=None)
+        if stop:
+            model_dm.save("models/{0}/model{1}no_stop.doc2vec".format(series, size), separately=None)
+        else:
+            model_dm.save("models/{0}/model{1}with_stop.doc2vec".format(series, size), separately=None)
     return model_dm
 
 

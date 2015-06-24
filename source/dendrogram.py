@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 __author__ = 'Wisse'
-""" Input consists of a set of test data, it's linkage-matrix and a name
-fot the output figure. The linkage-matrix is constructed with extract.py.
 
-Example usage:
-python source/dendrogram.py data/test_data.txt results/test_linkage a_test_figure """
 
 import sys
 import matplotlib.pyplot as plt
@@ -17,11 +13,11 @@ import tree
 sys.setrecursionlimit(10000)
 
 
-def render(linkage_file, test_data, file_name, stop, level, fig_height=20, fig_width=8):
+def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20, fig_width=8):
     fontsize = 4
 
     # construct labels
-    sentences = sp.MySentences(test_data)
+    sentences = sp.MySentences(test_data, stop=stop)
     labels = np.array(sentences.get_sentences())
 
 
@@ -31,8 +27,8 @@ def render(linkage_file, test_data, file_name, stop, level, fig_height=20, fig_w
 
     # load linkage matrix
 
-    links = pickle.load(open(linkage_file))
-    link_tree = hac.to_tree(links)
+    links = linkage_file
+    link_tree = hac.to_tree(linkage_file)
 
 
     n = sentences.size
@@ -55,12 +51,38 @@ def render(linkage_file, test_data, file_name, stop, level, fig_height=20, fig_w
                      leaf_label_func=llf, leaf_font_size=fontsize, show_leaf_counts=True, get_leaves=True)
 
 
-    plt.savefig('results/' + file_name)
-    plt.show()
+    plt.savefig('results/' + file_name +'/dendrogram' + str(level) + '.png')
 
-    # print indexes and corresponding labels to terminal
-    for i in den['leaves']:
-        if i < n:
-            print i, llf(i)
-        else: print i, llf(i)
+    if show:
+        plt.show()
+
+    # print indexes and corresponding labels to terminal and file
+    output = open('results/' + file_name + 'clusters' + str(level) + '.txt', 'w')
+
+    def find_sentence(id):
+        if id < n:
+            label = "Singleton: " + str(labels[id]) + '\n'
+            return label
+        else:
+            indeces = tree.search_tree(link_tree, id)
+            sentences = [str(labels[index]) for index in indeces]
+            output = [str(len(sentences)) + " ------------------------------------------"] + sentences
+            return '\n'.join(output)
+
+    num_singletons = []
+    num_clusters = []
+
+    singles = [i for i in den['leaves'] if i < n]
+
+    num_clusters.append(len(den['leaves']))
+    num_singletons.append(len(singles))
+
+    output.write('Number of clusters: %s \n' % len(den['leaves']))
+    output.write('Number of singletons: %s \n\n' % len(singles))
+
+    for id in den['leaves']:
+        output.write(find_sentence(id))
+        output.write('\n\n\n\n\n\n')
+    output.close()
+
 
