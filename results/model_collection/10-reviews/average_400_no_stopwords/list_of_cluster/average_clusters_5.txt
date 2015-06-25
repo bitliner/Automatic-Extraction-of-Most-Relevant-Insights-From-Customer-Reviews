@@ -1,0 +1,133 @@
+Data: data/constructed-review-data/10-reviews.txt, Level: 5, Remove Stopwords: False 
+Number of clusters: 17 
+Number of singletons: 14 
+
+Execution time: 0.324545145035 
+Singleton: n my brother bought me this for my birthday and im really pleased with it.
+
+
+
+
+
+
+Singleton: n my hubby brought one for me as some other family members had one.
+
+
+
+
+
+
+Singleton: n just arrived at tea time plugged it in and using the quick guide made nuggets and chips to perfection loving this air fryer can see my oven getting a spring clean and never used again no waiting for it to heat up teenage friendly too very impressed so far off to buy steak for tomorrow n
+
+
+
+
+
+
+Singleton: n very easy to use give tasty results without any effort i would highly recommend this product.
+
+
+
+
+
+
+Singleton: n i bought this one for my parents to help them to cook the health food its really helpful and the food also very delicious.n
+
+
+
+
+
+
+5 ------------------------------------------
+n the cooking information could be improved.
+n i had a acti fry and found that this mashed up some of the chips.
+n ive considered buying a deep fat fryer for years but was put off by all that fat i decided to try this and the day trial period offered was what clinched it.
+n excellent product very pleased.
+n very nice airfryer get red of oil for everquick time to prepair food.n
+
+
+
+
+
+Singleton: im optimisticn
+
+
+
+
+
+
+Singleton: my next attempt will be to do chips from fresh potatoes.
+
+
+
+
+
+
+Singleton: all in all its a great bit of kit for kitchen kit.n
+
+
+
+
+
+
+Singleton: also tried frozen chips and again very happy.
+
+
+
+
+
+
+Singleton: i would have liked it included with the airfryer when i bought it.n it works well for potato products but i am sure i will get more use from it when i have purchased the insert.n
+
+
+
+
+
+
+Singleton: it makes wonderful chips and have used it for all sorts of other stuff including making really easy and delicious chocolate brownies.n just wished it cut out automatically when you open it to shake the contents rather than waste energy.n
+
+
+
+
+
+
+Singleton: yes i like it but didnt get the divider part in my box its cooks everything for people great .
+
+
+
+
+
+
+5 ------------------------------------------
+the amount of oil used for frying chips is very little u have to see it to believe itn
+so i took the plunge and bought this model and found it done an astounding job.
+a better reference chart so you could compare the oven cook information e.g.
+an excellent way of producing potato chips with minimum of fat with no cooking smells.n
+i was expecting to be disappointed but am happy to say that im delighted with this.
+
+
+
+
+
+Singleton: ive only had oven once since buying it pity there not a stop timer switch on it as having to turn power off to stop it not great.
+
+
+
+
+
+
+Singleton: mins deg with the time and temperature for the airfryer rather than just listing a few foodstuffs.n having failed to find a baking insert to fit i now find you sell one.
+
+
+
+
+
+
+2 ------------------------------------------
+ive cooked chicken in it using a recipe from the book that comes with it and was very happy with the result.
+extremely happyn
+
+
+
+
+

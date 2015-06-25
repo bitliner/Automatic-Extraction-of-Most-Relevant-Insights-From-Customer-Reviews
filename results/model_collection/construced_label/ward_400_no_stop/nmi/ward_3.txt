@@ -1,0 +1,73 @@
+Data: data/constructed-review-data/constructed-sentences-20, Level: 3, Remove Stopwords: False 
+Number of clusters: 5 
+Number of singletons: 4 
+
+Purity: 0.138888888889 
+NMI: 0.267344141948
+Execution time: 0.0345730781555 
+Singleton: (u'h_', 'phillips put effort into design and end user satisfaction.')
+
+
+
+
+
+
+Singleton: (u'h_', 'what an elegant functional design')
+
+
+
+
+
+
+Singleton: (u'g_', 'whoever designed this thing failed.')
+
+
+
+
+
+
+Singleton: (u'g_', 'philips please change the bad basket design')
+
+
+
+
+
+
+32 ------------------------------------------
+(u'g_', 'i would say that is a pretty flawed design.')
+(u'g_', 'no design awards for philips.')
+(u'g_', 'it is poor design.')
+(u'f_', 'the odd shake allows you to cook them evenly.')
+(u'f_', 'french fries have roasted taste and bakes uneven.')
+(u'f_', 'if your chips dont cook evenly or have burnt ends uneven cooking.')
+(u'f_', 'there was a more uneven distribution of cooking.')
+(u'f_', 'sometimes the potato slices would be unevenly cooked.')
+(u'f_', 'without shaking they cook unevenly.')
+(u'e_', 'you want something good and easy to prepare.')
+(u'e_', 'it is a very simple matter to clean the thing.')
+(u'e_', 'very easy to clean with a quick soak.')
+(u'e_', 'so easy to clean.')
+(u'e_', 'cleaning is very easy.')
+(u'd_', 'tiresome cleaning is enough to put anyone off.')
+(u'd_', 'the machine took a lot of cleaning.')
+(u'c_', 'easy to wash and store away.')
+(u'c_', 'its completely hassle free.')
+(u'c_', 'so its simple for all to use.')
+(u'b_', 'these were the best tasting lowfat chips i have ever had.')
+(u'b_', 'if you love oven chips or onion rings but no oil then this is perfect .')
+(u'b_', 'most fries do not require oil.')
+(u'b_', 'frozen chips taste just as good as if done in a deep fryer.')
+(u'b_', 'the chips are as good as can be expected when you use so little oil.')
+(u'b_', 'make french fries without deep frying.')
+(u'b_', 'no oil needed at all with frozen chips.')
+(u'b_', 'amazing real french fries without the oil.')
+(u'a_', 'i really love this product.')
+(u'a_', 'i am sure as i get more confidant i will love it.')
+(u'a_', 'i love the airfryer.')
+(u'a_', 'i love this product it is so easy to use.')
+(u'a_', 'i absolutely love this product.')
+
+
+
+
+
