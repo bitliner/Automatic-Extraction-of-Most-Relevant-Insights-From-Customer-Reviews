@@ -1,0 +1,177 @@
+Data: data/constructed-review-data/constructed-sentences-20, Level: 21, Remove Stopwords: True Number of clusters: 23 
+Number of singletons: 22 
+
+Execution time: 2.72726583481Singleton: h_ phillips put effort design end user satisfaction.
+
+
+
+
+
+
+Singleton: h_ elegant functional design
+
+
+
+
+
+
+Singleton: g_ whoever designed thing failed.
+
+
+
+
+
+
+Singleton: g_ philips please change bad basket design
+
+
+
+
+
+
+Singleton: g_ would say pretty flawed design.
+
+
+
+
+
+
+Singleton: g_ design awards philips.
+
+
+
+
+
+
+Singleton: g_ poor design.
+
+
+
+
+
+
+Singleton: f_ odd shake allows cook evenly.
+
+
+
+
+
+
+Singleton: f_ french fries roasted taste bakes uneven.
+
+
+
+
+
+
+Singleton: f_ chips dont cook evenly burnt ends uneven cooking.
+
+
+
+
+
+
+Singleton: f_ uneven distribution cooking.
+
+
+
+
+
+
+Singleton: f_ sometimes potato slices would unevenly cooked.
+
+
+
+
+
+
+Singleton: f_ without shaking cook unevenly.
+
+
+
+
+
+
+Singleton: e_ want something good easy prepare.
+
+
+
+
+
+
+Singleton: e_ simple matter clean thing.
+
+
+
+
+
+
+Singleton: e_ easy clean quick soak.
+
+
+
+
+
+
+Singleton: e_ easy clean.
+
+
+
+
+
+
+Singleton: e_ cleaning easy.
+
+
+
+
+
+
+Singleton: d_ tiresome cleaning enough put anyone off.
+
+
+
+
+
+
+Singleton: d_ machine took lot cleaning.
+
+
+
+
+
+
+Singleton: c_ easy wash store away.
+
+
+
+
+
+
+Singleton: c_ completely hassle free.
+
+
+
+
+
+
+14 ------------------------------------------
+c_ simple use.
+b_ best tasting lowfat chips ever had.
+b_ love oven chips onion rings oil perfect .
+b_ fries require oil.
+b_ frozen chips taste good done deep fryer.
+b_ chips good expected use little oil.
+b_ make french fries without deep frying.
+b_ oil needed frozen chips.
+b_ amazing real french fries without oil.
+a_ really love product.
+a_ sure get confidant love it.
+a_ love airfryer.
+a_ love product easy use.
+a_ absolutely love product.
+
+
+
+
+

@@ -1,0 +1,63 @@
+Data: data/constructed-review-data/constructed-sentences-20, Level: 2, Remove Stopwords: True Number of clusters: 4 
+Number of singletons: 3 
+
+Execution time: 0.929876089096Singleton: h_ phillips put effort design end user satisfaction.
+
+
+
+
+
+
+Singleton: h_ elegant functional design
+
+
+
+
+
+
+Singleton: g_ whoever designed thing failed.
+
+
+
+
+
+
+33 ------------------------------------------
+g_ philips please change bad basket design
+g_ would say pretty flawed design.
+g_ design awards philips.
+g_ poor design.
+f_ odd shake allows cook evenly.
+f_ french fries roasted taste bakes uneven.
+f_ chips dont cook evenly burnt ends uneven cooking.
+f_ uneven distribution cooking.
+f_ sometimes potato slices would unevenly cooked.
+f_ without shaking cook unevenly.
+e_ want something good easy prepare.
+e_ simple matter clean thing.
+e_ easy clean quick soak.
+e_ easy clean.
+e_ cleaning easy.
+d_ tiresome cleaning enough put anyone off.
+d_ machine took lot cleaning.
+c_ easy wash store away.
+c_ completely hassle free.
+c_ simple use.
+b_ best tasting lowfat chips ever had.
+b_ love oven chips onion rings oil perfect .
+b_ fries require oil.
+b_ frozen chips taste good done deep fryer.
+b_ chips good expected use little oil.
+b_ make french fries without deep frying.
+b_ oil needed frozen chips.
+b_ amazing real french fries without oil.
+a_ really love product.
+a_ sure get confidant love it.
+a_ love airfryer.
+a_ love product easy use.
+a_ absolutely love product.
+
+
+
+
+

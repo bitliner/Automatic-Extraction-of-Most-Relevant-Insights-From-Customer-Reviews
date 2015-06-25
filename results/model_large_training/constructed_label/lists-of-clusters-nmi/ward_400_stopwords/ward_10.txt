@@ -1,0 +1,113 @@
+Data: data/constructed-review-data/constructed-sentences-20, Level: 10, Remove Stopwords: True Number of clusters: 12 
+Number of singletons: 11 
+
+Purity: 0.333333333333 
+NMI: 0.495843002268
+Execution time: 0.290385007858Singleton: (u'h_', 'phillips put effort design end user satisfaction.')
+
+
+
+
+
+
+Singleton: (u'h_', 'elegant functional design')
+
+
+
+
+
+
+Singleton: (u'g_', 'whoever designed thing failed.')
+
+
+
+
+
+
+Singleton: (u'g_', 'philips please change bad basket design')
+
+
+
+
+
+
+Singleton: (u'g_', 'would say pretty flawed design.')
+
+
+
+
+
+
+Singleton: (u'g_', 'design awards philips.')
+
+
+
+
+
+
+Singleton: (u'g_', 'poor design.')
+
+
+
+
+
+
+Singleton: (u'f_', 'odd shake allows cook evenly.')
+
+
+
+
+
+
+Singleton: (u'f_', 'french fries roasted taste bakes uneven.')
+
+
+
+
+
+
+Singleton: (u'f_', 'chips dont cook evenly burnt ends uneven cooking.')
+
+
+
+
+
+
+Singleton: (u'f_', 'uneven distribution cooking.')
+
+
+
+
+
+
+25 ------------------------------------------
+(u'f_', 'sometimes potato slices would unevenly cooked.')
+(u'f_', 'without shaking cook unevenly.')
+(u'e_', 'want something good easy prepare.')
+(u'e_', 'simple matter clean thing.')
+(u'e_', 'easy clean quick soak.')
+(u'e_', 'easy clean.')
+(u'e_', 'cleaning easy.')
+(u'd_', 'tiresome cleaning enough put anyone off.')
+(u'd_', 'machine took lot cleaning.')
+(u'c_', 'easy wash store away.')
+(u'c_', 'completely hassle free.')
+(u'c_', 'simple use.')
+(u'b_', 'best tasting lowfat chips ever had.')
+(u'b_', 'love oven chips onion rings oil perfect .')
+(u'b_', 'fries require oil.')
+(u'b_', 'frozen chips taste good done deep fryer.')
+(u'b_', 'chips good expected use little oil.')
+(u'b_', 'make french fries without deep frying.')
+(u'b_', 'oil needed frozen chips.')
+(u'b_', 'amazing real french fries without oil.')
+(u'a_', 'really love product.')
+(u'a_', 'sure get confidant love it.')
+(u'a_', 'love airfryer.')
+(u'a_', 'love product easy use.')
+(u'a_', 'absolutely love product.')
+
+
+
+
+
