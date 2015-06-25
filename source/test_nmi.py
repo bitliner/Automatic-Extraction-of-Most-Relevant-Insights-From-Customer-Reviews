@@ -11,9 +11,9 @@ model_path = str(sys.argv[2])
 exp_name = str(sys.argv[3])
 
 vector_size = int(sys.argv[4])
-save = bool(sys.argv[5])
+save = bool(int(sys.argv[5]))
 level = int(sys.argv[6])
-stop = bool(sys.argv[7])
+stop = bool(int(sys.argv[7]))
 method = str(sys.argv[8])
 
 

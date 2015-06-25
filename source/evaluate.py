@@ -106,18 +106,18 @@ def evaluate(labeled_data, linkage_file, p, stop, output, save=True):
         num_singletons = []
         num_clusters = []
 
-        file = open('results/lists-of-clusters-nmi/'+ str(output)+ '_%s.txt' % p, 'w')
+        file = open('results/'+ str(output)+ '_%s.txt' % p, 'w')
         singles = [i for i in den['leaves'] if i < n]
 
         num_clusters.append(len(den['leaves']))
         num_singletons.append(len(singles))
 
-        file.write('Data: {0}, Level: {1}, Remove Stopwords: {2} '.format(labeled_data,p, stop))
+        file.write('Data: {0}, Level: {1}, Remove Stopwords: {2} \n'.format(labeled_data,p, stop))
         file.write('Number of clusters: %s \n' % len(den['leaves']))
         file.write('Number of singletons: %s \n\n' % len(singles))
         file.write('Purity: %s \n' % pur_out)
         file.write('NMI: %s\n' % nmi_out)
-        file.write('Execution time: %s'%(time.time() - begin))
+        file.write('Execution time: %s \n'%(time.time() - begin))
 
         for id in den['leaves']:
             file.write(find_sentence(id))

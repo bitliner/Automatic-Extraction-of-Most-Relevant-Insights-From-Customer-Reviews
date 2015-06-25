@@ -13,7 +13,8 @@ import time
 sys.setrecursionlimit(10000)
 
 
-def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20, fig_width=8):
+def render(linkage_file, test_data, file_name, stop, level, show, save, fig_height=20, fig_width=8):
+    print show
     begin = time.time()
     fontsize = 4
 
@@ -52,40 +53,41 @@ def render(linkage_file, test_data, file_name, stop, level, show, fig_height=20,
                      leaf_label_func=llf, leaf_font_size=fontsize, show_leaf_counts=True, get_leaves=True)
 
 
-    plt.savefig('results/dendrograms/' + file_name +'_dendrogram_' + str(level) + '.png')
+    plt.savefig('results/' + file_name +'_dendrogram_' + str(level) + '.png')
 
     if show:
         plt.show()
 
-    # print indexes and corresponding labels to terminal and file
-    output = open('results/lists-of-clusters/' + file_name + '_clusters_' + str(level) + '.txt', 'w')
+    if save:
+        # print indexes and corresponding labels to terminal and file
+        output = open('results/' + file_name + '_clusters_' + str(level) + '.txt', 'w')
 
-    def find_sentence(id):
-        if id < n:
-            label = "Singleton: " + str(labels[id]) + '\n'
-            return label
-        else:
-            indeces = tree.search_tree(link_tree, id)
-            sentences = [str(labels[index]) for index in indeces]
-            output = [str(len(sentences)) + " ------------------------------------------"] + sentences
-            return '\n'.join(output)
+        def find_sentence(id):
+            if id < n:
+                label = "Singleton: " + str(labels[id]) + '\n'
+                return label
+            else:
+                indeces = tree.search_tree(link_tree, id)
+                sentences = [str(labels[index]) for index in indeces]
+                output = [str(len(sentences)) + " ------------------------------------------"] + sentences
+                return '\n'.join(output)
 
-    num_singletons = []
-    num_clusters = []
+        num_singletons = []
+        num_clusters = []
 
-    singles = [i for i in den['leaves'] if i < n]
+        singles = [i for i in den['leaves'] if i < n]
 
-    num_clusters.append(len(den['leaves']))
-    num_singletons.append(len(singles))
+        num_clusters.append(len(den['leaves']))
+        num_singletons.append(len(singles))
 
-    output.write('Data: {0}, Level: {1}, Remove Stopwords: {2} '.format(test_data,level, stop))
-    output.write('Number of clusters: %s \n' % len(den['leaves']))
-    output.write('Number of singletons: %s \n\n' % len(singles))
-    output.write('Execution time: %s'%(time.time() - begin))
+        output.write('Data: {0}, Level: {1}, Remove Stopwords: {2} \n'.format(test_data,level, stop))
+        output.write('Number of clusters: %s \n' % len(den['leaves']))
+        output.write('Number of singletons: %s \n\n' % len(singles))
+        output.write('Execution time: %s \n'%(time.time() - begin))
 
-    for id in den['leaves']:
-        output.write(find_sentence(id))
-        output.write('\n\n\n\n\n\n')
-    output.close()
+        for id in den['leaves']:
+            output.write(find_sentence(id))
+            output.write('\n\n\n\n\n\n')
+        output.close()
 
 
